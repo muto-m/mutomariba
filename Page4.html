@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congratulations - Page 4</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: grey; /* Light background */
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* Title at the top */
+        h1 {
+            position: absolute;
+            top: 10%;
+            font-size: 40px;
+            color: white;
+        }
+
+        /* Envelope style */
+        .envelope {
+            width: 450px;
+            height: 250px;
+            background-color: pink; /* Envelope color (yellow-orange) */
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            border-radius: 10px;
+            padding: 20px 20px 10px 20px; /* Adjust padding for flap effect */
+        }
+
+        /* Envelope flap */
+        .envelope::after {
+            content: '';
+            position: absolute;
+            top: -15px; /* Adjust to look like flap */
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 125px solid transparent;
+            border-right: 125px solid transparent;
+            border-bottom: 15px solid pink; /* Same color as envelope */
+        }
+
+        /* Adjust "Click to open me" text position */
+        .envelope::before {
+            content: 'Click to open me';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -30%); /* Move the text down a little */
+            font-size: 18px;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Letter style */
+        .letter {
+            display: none;
+            width: 300px;
+            height: 400px;
+            background: #fff;
+            border: 2px solid white;
+            padding: 20px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: showLetter 1s ease-out forwards;
+        }
+
+        /* Keyframes for letter showing up */
+        @keyframes showLetter {
+            0% {
+                opacity: 0;
+                transform: translateY(-50%) scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(-50%) scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Muto left gift for you!</h1>
+
+    <!-- Envelope without the seal -->
+    <div class="envelope" id="envelope" onclick="openEnvelope()">
+        Click to open me
+    </div>
+
+    <!-- Letter -->
+    <div class="letter" id="letter">
+        <h2>Dear Santa's Helper,</h2>
+        <p>Just jokes (inserts laughing emoji) Hi baby, I'm a person that's good with words, but when it comes to you I find myself struggling most of the time. I'll keep this short. My heart beats for you every single day and I just continue falling for you. I mean, how could I not; you're incredible, soft-spoken, smart and beautiful. I really have no words to describe you. I love you so much and I wouldn't wanna be with anyone else. With that being said, Would you do me the honors of being my valentine? please?
+            .<br><br>
+            Forever yours,<br>
+            [Muto]
+        </p>
+    </div>
+
+    <script>
+        function openEnvelope() {
+            // Display the letter when the envelope is clicked
+            document.getElementById('letter').style.display = 'block';
+            document.getElementById('letter').style.opacity = 1;
+
+            // Hide the envelope after clicking (optional)
+            document.getElementById('envelope').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>

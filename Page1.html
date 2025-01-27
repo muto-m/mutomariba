@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasure Hunt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-image: url('https://i0.wp.com/www.biblejournal.net/wp-content/uploads/2017/08/bigstock-red-stone-heart-on-other-stone-111685781-1024x683.jpg'); /* Replace with your image filename or URL */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            font-size: 28px; /* Increased font size for body text */
+        }
+        h1 {
+            margin-bottom: 40px; /* Increased space below heading */
+            font-size: 40px; /* Increased font size for heading */
+        }
+        .pin-container {
+            margin-top: 30px; /* Adds more space above the pin input */
+        }
+        .pin-input {
+            padding: 15px;
+            font-size: 20px; /* Larger font size for pin input */
+            width: 120px; /* A little wider input field */
+        }
+        .submit-btn {
+            padding: 15px 25px;
+            background-color: red;
+            color: white;
+            border: none;
+            font-size: 18px; /* Increased font size for button */
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #d87d00;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Good evening, Ms Mqalo</h1>
+    <p>Welcome to a special little treasure hunt. To proceed, please enter the secret pin:</p>
+
+    <!-- Poetic message with bold and capitalized last part -->
+    <p><em>"The roses were red, the violets were blue,</p> 
+	<p>your voice was sweet, soft and true,</p> 
+	<p>and everything felt right when I was with you.</p> 
+	<p>In a world full of chances, I’ll never forget</p> 
+	<p>the first time I kissed you, <strong><span style="text-transform: uppercase;">THE DAY WE MET</span></strong>."</em></p>
+
+    <div class="pin-container">
+        <input type="text" id="pin" class="pin-input" maxlength="4" placeholder="Enter pin">
+        <button class="submit-btn" onclick="checkPin()">Submit</button>
+    </div>
+
+    <p id="error-message" style="color: red; display: none;">Incorrect pin, please try again.</p>
+
+    <script>
+        function checkPin() {
+            var pin = document.getElementById("pin").value;
+            if (pin === "2810") {
+                window.location.href = "page2.html"; // Redirect to the next page
+            } else {
+                document.getElementById("error-message").style.display = "block"; // Show error message
+            }
+        }
+    </script>
+</body>
+</html>

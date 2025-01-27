@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasure Hunt - Page 2</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            background-color: grey; /* Dark background */
+        }
+
+        /* Flower on the left */
+        .flower {
+            position: absolute;
+            left: 0%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 700px; /* Adjust size */
+            height: 600px;
+            background: url('https://img.freepik.com/premium-photo/real-scene-1000-beautiful-romantic-light-pink-white-roses-glow-ai-generative_895799-16353.jpg') no-repeat center center; /* Placeholder image */
+            background-size: contain;
+        }
+
+        /* Container for the password input */
+        .password-container {
+            position: absolute;
+            right: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            color: white;
+        }
+
+        /* Password input field styling */
+        .password-input {
+            padding: 10px;
+            font-size: 18px;
+            width: 200px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            margin-bottom: 10px;
+        }
+
+        /* Submit button styling */
+        .submit-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #218838;
+        }
+
+        /* Error message */
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        /* Message above the password input */
+        .message {
+            font-size: 22px;
+            margin-bottom: 15px;
+            font-style: italic;
+            color: white;
+        }
+
+        /* Bold and uppercase styling for Christmas and New Nickname */
+        .highlight {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Flower element on the left -->
+    <div class="flower"></div>
+
+    <!-- Password input on the right -->
+    <div class="password-container">
+        <!-- Message above the password input -->
+        <p class="message">Just like pink roses, your love is soft, sweet and takes away my pain.</p> 
+	    <p class="message">With you by my side, I have so much to gain.</p> 
+		<p class="message">You're my favorite gift on <span class="highlight">CHRISTMAS</span> and that reminds me of your <span class="highlight">NEW NICKNAME</span>.</p>
+        <h2>Enter Password</h2>
+        <input type="text" class="password-input" id="password" placeholder="Enter password">
+        <button class="submit-button" onclick="checkPassword()">Submit</button>
+        <p class="error-message" id="error-message" style="display: none;">Incorrect password. Try again!</p>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const passwordInput = document.getElementById('password').value;
+            const correctPassword = 'santa\'s helper';
+            const errorMessage = document.getElementById('error-message');
+
+            // Check if the password is correct
+            if (passwordInput === correctPassword) {
+                // Redirect to Page 3
+                window.location.href = "page3.html"; // Change this to your actual Page 3 URL
+            } else {
+                // Show error message
+                errorMessage.style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>
